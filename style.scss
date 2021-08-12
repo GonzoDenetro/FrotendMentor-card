@@ -1,0 +1,70 @@
+$blue: hsl(185, 75%, 39%);
+$dark-blue: hsl(229, 23%, 23%);
+$gray-blue: hsl(227, 10%, 46%);
+$neutral: hsl(0, 0%, 59%);
+$font: 'Kumbh Sans', sans-serif;
+
+@mixin lightText {
+    font-weight: 400;
+    color: $neutral;
+    font-family: $font;
+}
+@mixin darkText {
+    font-size: 18px;
+    font-weight: 700;
+    color: $dark-blue;
+    font-family: $font;
+}
+
+ *{
+     margin: 0;
+     box-sizing: border-box;
+}
+.card-container {
+    background: $blue;
+}
+.card {
+    width: 350px;
+    border-radius: 20px;
+    transform: translate(50%, 50%);
+    position: relative;
+}
+.card__img-background {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.card__info-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card__info-container--img {
+    position: absolute;
+    top: 22%;
+   .profile-photo {
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+}
+.card__info-container--name {
+    margin-top: 60px;
+    margin-bottom: 14px;
+    @include darkText();
+    .card__info-container--age {
+        @include lightText();
+    }
+}
+.card__info-container--country {
+    @include lightText();
+}
+.card__stats-container {
+    display: flex;
+    justify-content: space-around;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+}
